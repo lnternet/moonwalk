@@ -1,7 +1,7 @@
 # Stage 1: Install dependencies and build React app
 FROM node:20-alpine AS builder
 
-WORKDIR /app
+WORKDIR /application
 
 # Install dependencies
 COPY package.json yarn.lock ./
@@ -22,7 +22,7 @@ ENV PORT=8080
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy React build output
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /application/build /usr/share/nginx/html
 
 # Run nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
