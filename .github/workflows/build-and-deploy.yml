@@ -26,6 +26,9 @@ jobs:
       - name: Build Docker image
         run: docker build -t ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.SERVICE_NAME }} .
 
+      - name: Configure docker
+        run: gcloud auth configure-docker
+
       - name: Push to Container Registry
         run: docker push ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.SERVICE_NAME }}
 
