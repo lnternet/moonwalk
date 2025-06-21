@@ -1,0 +1,245 @@
+* {
+  margin: 0 auto;
+}
+
+.container {
+  /* margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0; */
+  height: 180px;
+  width: 250px;
+  animation: bounce 0.25s infinite alternate;
+}
+
+#dog_belly {
+  position: absolute;
+  height: 200px;
+  width: 55px;
+  left: 100px;
+  background-color: #654321;
+  transform: rotate(90deg);
+  border-radius: 2rem;
+  animation: bellymove 0.25s infinite alternate;
+  z-index: 2;
+}
+
+#dog_head {
+  position: absolute;
+  height: 100px;
+  width: 55px;
+  left: 172.5px;
+  top: 25px;
+  border-radius: 2rem;
+  background-color: #654321;
+  animation: headbob 0.5s infinite alternate ease-in-out;
+  transform-origin: bottom;
+}
+
+#helmet {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 156px;
+  top: 0px;
+  border-radius: 50px;
+  background-color: red;
+  animation: headbob 0.5s infinite alternate ease-in-out;
+  transform-origin: bottom;
+}
+
+#dog_ear_right {
+  position: absolute;
+  height: 40px;
+  width: 30px;
+  left: -10px;
+  background-color: #3f2a14;
+  border-radius: 1rem;
+  animation: earflop 0.25s infinite alternate;
+}
+
+#dog_eye {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  left: 30px;
+  top: 10px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+  #dog_eye_pupil {
+    height: 12px;
+    width: 12px;
+    background-color: #3f2a14;
+    border-radius: 50%;
+    transform: translateX(3px);
+  }
+}
+
+#dog_nose {
+  position: absolute;
+  width: 60px;
+  height: 25px;
+  top: 20px;
+  left: 15px;
+  background-color: #654321;
+  border-radius: 0 0 1rem 0;
+}
+
+#dog_nose_spot {
+  position: absolute;
+  left: 67.5px;
+  top: 15px;
+  width: 12.5px;
+  height: 12.5px;
+  background-color: #3f2a14;
+  border-radius: 50%;
+}
+
+#dog_leg_frontright {
+  position: absolute;
+  height: 40px;
+  width: 15px;
+  background-color: #654321;
+  top: 117.5px;
+  left: 190px;
+  border-radius: 2rem;
+  z-index: 1;
+  animation: legmove 0.5s infinite alternate ease-in-out;
+}
+
+#dog_leg_frontleft {
+  position: absolute;
+  height: 40px;
+  width: 15px;
+  background-color: #654321;
+  top: 117.5px;
+  left: 50px;
+  border-radius: 2rem;
+  animation: legmove 0.5s infinite alternate ease-in-out;
+  animation-delay: 0.5s;
+}
+
+#dog_leg_backleft {
+  position: absolute;
+  height: 40px;
+  width: 15px;
+  background-color: #3f2a14;
+  top: 117.5px;
+  left: 50px;
+  border-radius: 2rem;
+  animation: legmove 0.5s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+#dog_leg_backright {
+  position: absolute;
+  height: 40px;
+  width: 15px;
+  background-color: #3f2a14;
+  top: 117.5px;
+  left: 190px;
+  border-radius: 2rem;
+  animation: legmove 0.5s infinite alternate ease-in-out;
+  animation-delay: 0.5s;
+  z-index: 0;
+}
+
+#tail {
+  position: absolute;
+  top: 80px;
+  left: 5px;
+  height: 15px;
+  background-color: #654321;
+  border-radius: 2rem;
+  animation: tailwag 0.25s infinite alternate ease-in-out;
+  transform-origin: right;
+}
+
+#shadow {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  top: 60px;
+  width: 200px;
+  height: 15px;
+  position: absolute;
+  background-color: #654321;
+  opacity: 0.15;
+  border-radius: 2rem;
+  animation: shadowmove 0.25s infinite alternate;
+}
+
+@keyframes bellymove {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 53.5px;
+  }
+}
+
+@keyframes headbob {
+  0% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes legmove {
+  0% {
+    transform: rotate(12deg) translateX(-5px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: rotate(-12deg) translateX(5px);
+  }
+}
+
+@keyframes shadowmove {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 195px;
+  }
+}
+
+@keyframes tailwag {
+  from {
+    width: 40px;
+    transform: rotate(25deg);
+  }
+  to {
+    width: 38px;
+    transform: rotate(12.5deg);
+  }
+}
+
+@keyframes earflop {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
