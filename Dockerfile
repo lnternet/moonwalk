@@ -1,32 +1,28 @@
-# Stage 1: Install all dependencies including dev for build
-FROM node:20-alpine AS development-dependencies-env
+# Stage 1: Install dependencies and build React app
+FROM node:20-alpine AS builder
 
 WORKDIR /app
+
+# Install dependencies
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
+
+# Copy source and build
 COPY . .
-
-# Stage 2: Install only production dependencies
-FROM node:20-alpine AS production-dependencies-env
-
-WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile --production
-
-# Stage 3: Build the application
-FROM node:20-alpine AS build-env
-
-WORKDIR /app
-COPY . .
-COPY --from=development-dependencies-env /app/node_modules ./node_modules
 RUN yarn build
 
-# Stage 4: Final image with production dependencies and build output
-FROM node:20-alpine
+# Stage 2: Serve with Nginx
+FROM nginx:alpine
 
-WORKDIR /app
-COPY package.json yarn.lock ./
-COPY --from=production-dependencies-env /app/node_modules ./node_modules
-COPY --from=build-env /app/build ./build
+# Cloud Run requires your app to listen on port 8080
+EXPOSE 8080
+ENV PORT=8080
 
-CMD ["yarn", "start"]
+# Replace the default Nginx config to route all paths to index.html (SPA mode)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy React build output
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# Run nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
