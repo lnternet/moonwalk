@@ -2,6 +2,7 @@ import React from "react";
 import "./dog.css";
 
 export const Dog: React.FC = () => {
+  console.log("Woof!");
   return (
     <>
       <div className="container">
