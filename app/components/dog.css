@@ -3,12 +3,6 @@
 }
 
 .container {
-  /* margin: auto;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  right: 0; */
   height: 180px;
   width: 250px;
   animation: bounce 0.25s infinite alternate;
@@ -45,7 +39,9 @@
   left: 156px;
   top: 0px;
   border-radius: 50px;
-  background-color: red;
+  background-color: rgb(160, 190, 241);
+  border: 8px solid rgb(147, 107, 107);
+  outline: 3px solid red;
   animation: headbob 0.5s infinite alternate ease-in-out;
   transform-origin: bottom;
 }
