@@ -7,7 +7,11 @@ export const Dog: React.FC = () => {
     <>
       <div className="container">
         <div id="dog_belly"></div>
-        <div id="helmet"></div>
+        <div id="helmet">
+          <div id="helmet_glass"></div>
+          <div id="helmet_bottom"></div>
+        </div>
+
         <div id="dog_head">
           <div id="dog_eye">
             <div id="dog_eye_pupil"></div>
@@ -22,7 +26,6 @@ export const Dog: React.FC = () => {
         <div id="dog_leg_frontleft"></div>
         <div id="tail"></div>
       </div>
-      <div id="shadow"></div>
     </>
   );
 };

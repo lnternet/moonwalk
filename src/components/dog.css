@@ -1,11 +1,9 @@
-* {
-  margin: 0 auto;
-}
-
 .container {
-  height: 180px;
+  height: 20px;
   width: 250px;
   animation: bounce 0.25s infinite alternate;
+  scale: 0.4;
+  rotate: -6deg;
 }
 
 #dog_belly {
@@ -34,16 +32,38 @@
 
 #helmet {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  left: 156px;
-  top: 0px;
-  border-radius: 50px;
-  background-color: rgb(160, 190, 241);
-  border: 8px solid rgb(147, 107, 107);
-  outline: 3px solid red;
+  height: 112px;
+  width: 112px;
+  left: 150px;
+  top: -20px;
+  border-radius: 56px;
+  /* background-color: rgb(43, 53, 72); */
+  border: 2px solid rgb(166, 166, 166);
+  outline: 1px solid rgb(196, 196, 196);
   animation: headbob 0.5s infinite alternate ease-in-out;
   transform-origin: bottom;
+  z-index: 10;
+}
+
+#helmet_glass {
+  /* position: absolute; */
+  height: 112px;
+  width: 112px;
+  /* left: 150px;
+  top: -20px; */
+  border-radius: 56px;
+  background-color: rgba(134, 128, 197, 0.307);
+}
+
+#helmet_bottom {
+  position: absolute;
+  width: 82px;
+  height: 20px;
+  top: 93px;
+  left: 0px;
+  border-radius: 108px;
+  background-color: #39beff;
+  rotate: 18deg;
 }
 
 #dog_ear_right {
@@ -155,23 +175,6 @@
   transform-origin: right;
 }
 
-#shadow {
-  margin: auto;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  top: 60px;
-  width: 200px;
-  height: 15px;
-  position: absolute;
-  background-color: #654321;
-  opacity: 0.15;
-  border-radius: 2rem;
-  animation: shadowmove 0.25s infinite alternate;
-}
-
 @keyframes bellymove {
   from {
     width: 50px;
@@ -199,15 +202,6 @@
   }
   100% {
     transform: rotate(-12deg) translateX(5px);
-  }
-}
-
-@keyframes shadowmove {
-  from {
-    width: 200px;
-  }
-  to {
-    width: 195px;
   }
 }
 

@@ -5,8 +5,9 @@ body {
 }
 
 body {
-  background-color: black;
+  background-color: #151845;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin: 20px;
 }

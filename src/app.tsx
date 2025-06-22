@@ -1,10 +1,9 @@
-import React from "react";
 import "./app.css";
-import { Dog } from "./components/dog";
 import { createRoot } from "react-dom/client";
+import { Moon } from "./components/moon";
 
 export default function App() {
-  return <Dog />;
+  return <Moon />;
 }
 
 const container = document.getElementById("root")!;
