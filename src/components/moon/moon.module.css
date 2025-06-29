@@ -78,15 +78,34 @@
   width: 12px;
   position: relative;
   border-radius: 50%;
+  animation: faceMovement 10s infinite alternate;
 }
-.eye-l {
+.eyeL {
   bottom: 255px;
   left: 59px;
 }
-.eye-r {
+.eyeR {
   bottom: 267px;
   left: 101px;
 }
+@keyframes faceMovement {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(7px, -5px);
+  }
+  50% {
+    transform: translate(-3px, 5px);
+  }
+  75% {
+    transform: translate(-3px, -7px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
 .mouth {
   height: 5px;
   width: 10px;
@@ -96,6 +115,7 @@
   left: 79px;
   border-top: none;
   border-radius: 0 0 10px 10px;
+  animation: faceMovement 10s infinite alternate;
 }
 .blush {
   background-color: #d0a9d9;
@@ -103,6 +123,7 @@
   width: 7.5px;
   position: relative;
   border-radius: 50%;
+  animation: faceMovement 10s infinite alternate;
 }
 .blush1 {
   bottom: 273px;
@@ -127,6 +148,9 @@
 }
 .orbit.slow {
   animation: spin 24s infinite linear;
+}
+.orbit.fast {
+  animation: spin 14s infinite linear;
 }
 @keyframes spin {
   100% {

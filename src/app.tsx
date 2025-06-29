@@ -1,6 +1,6 @@
 import "./app.css";
 import { createRoot } from "react-dom/client";
-import { Moon } from "./components/moon";
+import { Moon } from "./components/moon/moon";
 
 export default function App() {
   return <Moon />;
