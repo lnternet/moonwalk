@@ -37,7 +37,6 @@
   left: 150px;
   top: -20px;
   border-radius: 56px;
-  /* background-color: rgb(43, 53, 72); */
   border: 2px solid rgb(166, 166, 166);
   outline: 1px solid rgb(196, 196, 196);
   animation: headbob 0.5s infinite alternate ease-in-out;
@@ -46,11 +45,8 @@
 }
 
 #helmet_glass {
-  /* position: absolute; */
   height: 112px;
   width: 112px;
-  /* left: 150px;
-  top: -20px; */
   border-radius: 56px;
   background-color: rgba(134, 128, 197, 0.307);
 }
